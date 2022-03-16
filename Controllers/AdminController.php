@@ -40,7 +40,5 @@ public function register(){
         }
     }
 }
-static public function logout(){
-    session_destroy();
-}
+
 }

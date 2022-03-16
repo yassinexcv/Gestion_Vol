@@ -1,4 +1,4 @@
 <?php
-AdminController::logout();
+User::logout();
 Redirect::to('login');
 ?>

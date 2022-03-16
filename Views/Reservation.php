@@ -27,16 +27,26 @@ $Unvol = $Vol->getOneVol($idVol);
                                 <label for="idVol" class="form-label">Num Vol*</label>
                                 <input type="number" name="idVol" class="form-control" placeholder="id">
                             </div> -->
-                            <div class="card" style="width: 18rem;">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Vile de Depart : <?php echo $Unvol->LieuDepart ?></li>
-                                    <li class="list-group-item">Ville darrive :  <?php echo $Unvol->LieuArrivé ?></li>
-                                    <li class="list-group-item">Date de Depart : <?php echo date('D-h-i', strtotime( $Unvol->DateDepart))?></li>
-                                    <li class="list-group-item">Date darrive : <?php echo $Unvol->DateArrive ?></li>
-                                    <!-- <li class="list-group-item">A second item <?php echo $Unvol->NbPlace ?></li> -->
-                                    <li class="list-group-item">Prix d'une seule ticket :<?php echo $Unvol->Prix ?></li>
-                                </ul>
-                            </div>
+                          
+                                                     
+                            <div class="">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+      <div  class="d-flex justify-content-between"  >
+           <h5 class="card-title"><i class="fas fa-plane-departure"></i>  Vile de Depart : <?php echo $Unvol->LieuDepart ?></h5>
+           <h5 class="card-title"><i class="fas fa-plane-arrival"></i>  Ville darrive :  <?php echo $Unvol->LieuArrivé ?></h5>
+      </div>
+   
+    <p class="card-text">Prix d'une seule ticket :<?php echo $Unvol->Prix ?> $</p>
+    
+  </div>
+  <div class="card-footer text-muted d-flex justify-content-between" style="">
+  <p> Date de Depart : <?php echo date('D-h-i', strtotime( $Unvol->DateDepart))?></p>
+  <p> Date darrive : <?php echo $Unvol->DateArrive ?></p>
+  </div>
+</div>
                             <div class="mb-3">
                                 <label for="choix" class="form-label">choix</label>
                                 <select class="form-control" name="choix">

@@ -48,7 +48,11 @@ class userController
             header(('location:login'));
         }elseif( $repence['motdepass']===$password){
         //    Redirect::to('home');
+        
         header(('location:HomeClient'));
+        $_SESSION['userid']= $repence['idClient'];
+        $_SESSION['username']= $repence['NomClient'];
+        die($_SESSION['username']);
 
         // echo 'hi';
         }
@@ -58,4 +62,5 @@ class userController
         }
         // die(var_dump($repence));
         }
+        
 }

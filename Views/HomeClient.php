@@ -16,13 +16,18 @@ if(isset($_POST['find'])){
             <div class="card">
                 <div class="card-body bg-light ">
                     <div class="table-responsive">
-                    <h1>Home Client</h1>
-                        <a href="<?php echo BASE_URL;?>HomeClient" class="btn btn-sm btn-secondary mr-2 mb-2">
-                            <i class="fas fa-home"></i>
+                            <div class="d-flex justify-content-between mb-4 ">
+                            <h1>Home Client</h1>
+                            <a href="<?php echo BASE_URL;?>logout"   class="btn btn-danger pt-3" > <i class="fas fa-sign-out-alt"></i> Déconction </a>
+                        </div>
+                        
+                    
+                        <a href="<?php echo BASE_URL;?>HomeClient"  class="btn btn-primary pt-2" >
+                            <i class="fas fa-home"></i> Home
                         </a>
-                        <!-- <a href="<?php echo BASE_URL;?>logout" title="Deconnexion"class="btn btn-sm btn-link mr-2 mb-2">
+                        <a href="<?php echo BASE_URL;?>profil" title="Deconnexion"class="btn btn-primary pt-2">
                             <i class="fas fa-user mr-2"> <?php echo $_SESSION['username'];?></i>
-                        </a> -->
+                        </a>
                         <form class="float-end mb-2 d-flex flex-rew" method="post">
                             <input type="text" class="form-control" name="search" placeholder="Recherche">
                             <button class="btn btn-info btn-sm" name="find" type="submit"><i class="fas fa-search"></i></button>

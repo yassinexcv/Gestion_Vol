@@ -6,7 +6,7 @@ require_once './autoload.php';
 
 $home = new HomeController();
 // $home->index($_GET['page']);
-$pages = ['home', 'add', 'delete', 'update', 'logout', 'login', 'generale', 'HomeAdmin', 'HomeClient', 'Reservation', 'profil'];
+$pages = ['home', 'add', 'delete', 'update', 'logout', 'login', 'generale', 'HomeAdmin', 'HomeClient','profil', 'Reservation','register' , 'profil'];
 if (1) {
     if (isset($_GET['page'])) {
         if (in_array($_GET['page'], $pages)) {

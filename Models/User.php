@@ -34,17 +34,20 @@ static public function login($data){
       
   }
   public static function createAcc($data){
-    // die(print_r($data['Lastname']));
-    $query= 'INSERT INTO client( NomClient, PrenomClent, EmailClent, NumPassport, dateN, motdepass) 
+    // die(print_r($data));
+
+    $query= 'INSERT INTO client( NomClient, PrenomClent, EmailClent, NumPassport, dateN,motdepass)
      VALUES (?,?,?,?,?,?)';
       $stmt=DB::connect()->prepare($query);
-      $stmt->bindParam(1,$data['Lastname']);
-      $stmt->bindParam(2,$data['Firstname']);
-      $stmt->bindParam(3,$data['email']);
-      $stmt->bindParam(4,$data['Numpass']);
-      $stmt->bindParam(5,$data['Datedenaissnce']);
-      $stmt->bindParam(6,$data['motdepass']);
-      if($stmt->execute()){
+      $prams= array ($data['Lastname'],$data['Firstname'],$data['email'],$data['Numpass'],$data['Datedenaissnce'],$data['motdepass']);
+      // $stmt->bindParam(1,$data['Lastname']);
+      // $stmt->bindParam(2,$data['Firstname']);
+      // $stmt->bindParam(3,$data['email']);
+      // $stmt->bindParam(4,$data['Numpass']);
+      
+      // $stmt->bindParam(5,$data['Datedenaissnce']);
+      // $stmt->bindParam(6,$data['motdepass']);
+      if($stmt->execute($prams)){
         return 'ok';
       }
       
@@ -59,6 +62,9 @@ static public function login($data){
   
   return $user ; 
   }
+  static public function logout(){
+    session_destroy();
+}
   
 }
 ?>
