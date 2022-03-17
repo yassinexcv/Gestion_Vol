@@ -25,9 +25,7 @@ if(isset($_POST['find'])){
                         <a href="<?php echo BASE_URL;?>HomeClient"  class="btn btn-primary pt-2" >
                             <i class="fas fa-home"></i> Home
                         </a>
-                        <a href="<?php echo BASE_URL;?>profil" title="Deconnexion"class="btn btn-primary pt-2">
-                            <i class="fas fa-user mr-2"> <?php echo $_SESSION['username'];?></i>
-                        </a>
+                        
                         <form class="float-end mb-2 d-flex flex-rew" method="post">
                             <input type="text" class="form-control" name="search" placeholder="Recherche">
                             <button class="btn btn-info btn-sm" name="find" type="submit"><i class="fas fa-search"></i></button>

@@ -52,7 +52,7 @@ class userController
         header(('location:HomeClient'));
         $_SESSION['userid']= $repence['idClient'];
         $_SESSION['username']= $repence['NomClient'];
-        die($_SESSION['username']);
+        // die($_SESSION['username']);
 
         // echo 'hi';
         }
@@ -61,6 +61,19 @@ class userController
             header(('location:login'));
         }
         // die(var_dump($repence));
+        }
+        public function getuser($id)
+        {
+           $res= User::getuser($id);
+           return $res;
+
+        }
+        public function getResrvation($id){
+
+            $res=Resrvation::getRes($id);
+            // die(var_dump($res));
+            return $res;
+
         }
         
 }

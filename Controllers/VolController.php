@@ -79,5 +79,25 @@ public function deletVol(){
             }
         }
 }
+public function addRes($id,$idVol,$choix)
+{
+    // die(var_dump($id));
+   $a= Resrvation ::  addResrvation($id,$idVol,$choix);
+   $b= Vol::updateOn($idVol);
+    if ( $a==='ok' && $b==='ok'){
+        Session::set('success', 'votre reservation a etait bien enregistré');
+        Redirect::to('profil');
+    }
+
+}
+public function annuler($idres){
+    $a =Resrvation:: annuler($idres);
+    // die(var_dump($a));
+if ($a === 'ok')
+{
+    Session::set('success', 'votre reservation a etait bien annuler');
+    Redirect::to('HomeClient');
+}
+}
 }
 ?>

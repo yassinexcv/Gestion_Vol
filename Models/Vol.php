@@ -2,7 +2,7 @@
  require_once './databese/DB.php';
 class Vol{
     static public function getAll(){
-        $stmt=DB::connect()->prepare('SELECT * FROM vol');
+        $stmt=DB::connect()->prepare('SELECT * FROM vol where NbPlace>1');
         $stmt->execute();
         return $stmt->fetchAll();
       // $stmt->close();
@@ -92,6 +92,15 @@ static public function searchVol($data){
   }catch(PDOException $ex){
     echo 'erreur'.$ex->getMessage();
   }
+}
+public static function updateOn($idVol)
+{
+  $query = " UPDATE  vol SET NbPlace= NbPlace-1";
+  $stmt=DB::connect()->prepare($query);
+ if( $stmt->execute()){
+   return 'ok';
+ }
+
 }
 /////////////////////////////////////////////////////
 }

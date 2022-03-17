@@ -65,6 +65,16 @@ static public function login($data){
   static public function logout(){
     session_destroy();
 }
-  
+public static function getuser($id)
+{
+  $query  = "SELECT * FROM `client` WHERE idClient =$id";
+  $stmt=DB::connect()->prepare($query);
+  $stmt->execute();
+  $user= $stmt->fetch(PDO::FETCH_ASSOC);
+  return $user;
+  // die(var_dump($user));
+
+
+}  
 }
 ?>
