@@ -1,4 +1,7 @@
 <?php
+if(!($_SESSION['login']&&$_SESSION['login']===true)){
+    Redirect::to('login');
+}
 if(isset($_POST['find'])){
     $data = new VolController();
     $vol=$data->findVol();

@@ -12,6 +12,7 @@ if(isset($_POST['submit'])){
             <div class="card">
                 <div class="card-header">
                     <h3 class="text-center">Inscription</h3>
+                    <?php require_once 'Views/includes/alert.php' ; ?>
                 </div>
                 <div class="card-body bg-light">
                 <form method="post" class="mr-4">
@@ -38,13 +39,14 @@ if(isset($_POST['submit'])){
                 <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">mot de passe </label>
                 <input type="password" required name="motdepass" class="form-control" id="exampleFormControlInput1" placeholder="********">
-                </div>
+                </div class='d-flex'>
                     <button class="btn btn-info btn-sm btn-primary" name="submit" type="submit">Inscription</button>
+                    <a href="<?php echo BASE_URL?>login" class="btn btn-link">Connexion</a>
             </div>
             </form>
             </div>
             <div class="card-footer">
-                <a href="<?php echo BASE_URL?>login" class="btn btn-link">Connexion</a>
+                
             </div>
         </div>
     </div>

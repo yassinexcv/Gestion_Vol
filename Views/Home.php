@@ -1,4 +1,8 @@
 <?php
+if (!($_SESSION['admin']==='admin' && $_SESSION['login'] && $_SESSION['login']=true)){
+    // die(var_dump($_SESSION['admin']));
+    Redirect::to('login');
+}
 if(isset($_POST['find'])){
     $data = new VolController();
     $vol=$data->findVol();

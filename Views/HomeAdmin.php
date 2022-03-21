@@ -1,4 +1,8 @@
 <?php
+if (!($_SESSION['admin']==='admin' && $_SESSION['login'] && $_SESSION['login']=true)){
+    // Redirect::to('lgoin');
+    die(var_dump($repence['EmailClent']));
+}
 if(isset($_POST['find'])){
     $data = new VolController();
     $vol=$data->findVol();

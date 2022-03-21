@@ -4,9 +4,10 @@ class VolController{
         $vol= Vol::getAll();
         return $vol;
     }
+
     public function getOneVol($idVol){
         // die(var_dump($idVol));
-          
+        
             $vol=vol::getVol($idVol); 
             // die(print_r($vol))  ;
             return $vol; 

@@ -32,11 +32,20 @@ class userController
 
         );
         // die(print_r($data));
-        $repence=User::createAcc($data);
+        if ( $_POST['email'] === 'admin@admin'){
+            // die(var_dump(4));
+            Session::set('error', 'se compte existe deja change ton email');
+            header(('location:register'));
+
+        }else
+        {
+            $repence=User::createAcc($data);
         if($repence==='ok'){
             Session::set('success', 'votre compte a etait bien crée');
             header(('location:login'));
         }
+        }
+        
 
     }
     public function verfylog(){
@@ -48,10 +57,20 @@ class userController
             header(('location:login'));
         }elseif( $repence['motdepass']===$password){
         //    Redirect::to('home');
-        
-        header(('location:HomeClient'));
+        // die(var_dump($repence['EmailClent']));
+        $_SESSION['login']=true;
         $_SESSION['userid']= $repence['idClient'];
         $_SESSION['username']= $repence['NomClient'];
+        header(('location:HomeClient'));
+        if ($repence['EmailClent']==='admin@admin'){
+            // die(var_dump($repence['EmailClent']));
+            $_SESSION['login']=true;
+            $_SESSION['admin']='admin';
+            // die(var_dump( $_SESSION['admin']));
+            header(('location:home'));
+        }
+  
+
         // die($_SESSION['username']);
 
         // echo 'hi';

@@ -18,6 +18,7 @@ class Vol{
         $vol=$stmt->fetch(PDO::FETCH_OBJ);
         return $vol;
       }catch(PDOException $ex){
+
         echo 'erreur'.$ex->getMessage();
       }
         
@@ -44,8 +45,10 @@ class Vol{
   $stmt=null;
    }
    static public function update($data){
+
+  //  die(print_r($data['idVol']));
     $stmt=DB::connect()->prepare(
-      'UPDATE  vol SET LieuDepart =:LieuDepart ,DateDepart =:DateDepart,DateArrive =:DateArrive,NbPlace =:NbPlace,Prix =:Prix,choix =:choix WHERE idVol=:idVol');
+      'UPDATE  vol SET `LieuDepart` =:LieuDepart ,`DateDepart` =:DateDepart, `DateArrive` =:DateArrive,`NbPlace` =:NbPlace,`Prix` =:Prix,`choix` =:choix WHERE `idVol`=:idVol');
     $stmt->bindParam(':idVol',$data['idVol']);
     $stmt->bindParam(':LieuDepart',$data['LieuDepart']);
     // $stmt->bindParam(':LieuArrivé',$data['LieuArrivé']);

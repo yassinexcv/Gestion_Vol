@@ -1,7 +1,8 @@
 <?php
 if(isset($_POST['idVol'])){
+    $idvol = $_POST['idVol'];
     $exitVol = new VolController();
-    $vol=$exitVol->getOneVol();
+    $vol=$exitVol->getOneVol($idvol);
     // die(print_r($vol['LieuDepart']));
 }else{
     Redirect::to('home');
