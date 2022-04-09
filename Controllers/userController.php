@@ -1,21 +1,7 @@
 <?php
 class userController
 {
-    public function auth()
-    {
-        if (isset($_POST['submit'])) {
-            $data['username'] = $_POST['username'];
-            $result = User::login($data);
-            if ($result->username === $_POST['username']) { //&& password_verify($_POST['password'],$result->password)
-                $_SESSION['login'] = true;
-                $_SESSION['username'] = $result->username;
-                Redirect::to('home');
-            } else {
-                Session::set('error', 'votre nom ou mot de passe inccorrect');
-                Redirect::to('login');
-            }
-        }
-    }
+   
 
     public function Creatacc()
     {

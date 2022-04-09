@@ -1,6 +1,5 @@
 <?php
 require_once './Views/includes/header.php';
-//require_once './Views/includes/header1.php';
 require_once './Controllers/HomeController.php';
 require_once './autoload.php';
 
@@ -17,4 +16,3 @@ $pages = ['home', 'add', 'delete', 'update', 'logout', 'login', 'generale', 'Hom
     } else {
         $home->index('HomeClient');
     }
-//require_once '../GestionVol/Views/includes/footer.php';
